@@ -13,7 +13,7 @@ const ActivitiesContextProvider: React.FC = (props) => {
                 description: 'tenes que hacer la app',
                 hour: '20:00',
                 activityType: 'programing',
-                imageUrl: './assets/images/random.jpg',
+                imageUrl: './assets/images/coding.png',
                 isCompleted: false
             },
             {
@@ -22,7 +22,7 @@ const ActivitiesContextProvider: React.FC = (props) => {
                 description: 'lo de ingles pal viernes',
                 hour: '20:02',
                 activityType: 'hobby',
-                imageUrl: './assets/images/random.jpg',
+                imageUrl: './assets/images/vida.jpeg',
                 isCompleted: false
             },
             {

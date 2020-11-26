@@ -19,7 +19,7 @@ const AddActivity: React.FC = () => {
 
     const addActivity = () => {
         const tittle = tittleInput.current?.value as string;
-        const description = tittleInput.current?.value as string;
+        const description = descriptionInput.current?.value as string;
         const activityType = activityTypeInput.current?.value as ActivityType;
         const startDate = new Date()
         const hour = startDate.getHours().toString() + ":" + startDate.getMinutes().toString()
