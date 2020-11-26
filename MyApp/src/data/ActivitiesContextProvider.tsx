@@ -14,7 +14,7 @@ const ActivitiesContextProvider: React.FC = (props) => {
                 hour: '20:00',
                 activityType: 'programing',
                 imageUrl: './assets/images/coding.png',
-                isCompleted: false
+                isCompleted: false,
             },
             {
                 id: Math.random().toString(),
@@ -23,7 +23,7 @@ const ActivitiesContextProvider: React.FC = (props) => {
                 hour: '20:02',
                 activityType: 'hobby',
                 imageUrl: './assets/images/vida.jpeg',
-                isCompleted: false
+                isCompleted: false,
             },
             {
                 id: Math.random().toString(),
@@ -32,14 +32,13 @@ const ActivitiesContextProvider: React.FC = (props) => {
                 hour: '20:04',
                 activityType: 'hobby',
                 imageUrl: './assets/images/random.jpg',
-                isCompleted: false
+                isCompleted: false,
             }
         ]
     );
 
     const addActivity = (tittle: string, description: string,hour: string, activityType:ActivityType) => {
         let imageUrl = '';
-        console.log(activityType);
         switch(activityType){
             case 'hobby':
                 imageUrl = '/assets/images/random.jpg'
@@ -53,8 +52,7 @@ const ActivitiesContextProvider: React.FC = (props) => {
             default:
                 imageUrl = '/assets/images/coding.png'
                 break;
-        };    
-        
+        };         
 
         const addActivity: Activity = {
             id: Math.random().toString(),
@@ -63,13 +61,21 @@ const ActivitiesContextProvider: React.FC = (props) => {
             hour,
             activityType,
             imageUrl,
-            isCompleted: false
+            isCompleted: false,
         };
 
         setActivities(currActivities => {
             return [...currActivities, addActivity]
         })
     };
+
+    const deleteActivity = (activityId: any) => {
+        setActivities(currActivities => {
+            let nowActivities = [...currActivities];
+            nowActivities = nowActivities.filter(act => act.id !== activityId);
+            return nowActivities;
+        })
+    }
 
     const completeActivity = (activityId: string) => {
         setActivities(currActivities => {
@@ -81,10 +87,12 @@ const ActivitiesContextProvider: React.FC = (props) => {
         });
     };
 
+
     const activitiesContext: ActivitiesContextModel = {
         activities,
         addActivity,
-        completeActivity
+        completeActivity,
+        deleteActivity
     };
 
     return (

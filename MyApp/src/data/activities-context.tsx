@@ -19,12 +19,14 @@ export interface ActivitiesContextModel {
         hour: string,
         activityType:ActivityType) => void;
     completeActivity: (activityId:string) => void;
+    deleteActivity: (activityId:string) => void;
 }
 
 const ActivitiesContext = React.createContext<ActivitiesContextModel>({ 
     activities: [],
     addActivity: () => {},
     completeActivity: () => {},
+    deleteActivity: () => {},
 })
 
 export default ActivitiesContext;

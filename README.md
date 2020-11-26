@@ -1,4 +1,4 @@
-# MyAppList 2.1
+# MyAppList 2.2
 >Molina Franco
 >App para NT
 >Ionic-React
